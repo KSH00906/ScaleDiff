@@ -68,10 +68,10 @@ pipe = CustomStableDiffusionXLPipeline.from_pretrained(
 pipe.vae.enable_tiling()
 
 # Generate high-resolution image
-prompt = "a portrait of a woman standing in a field of flowers at sunset"
+prompt = "a woman"
 negative_prompt = "blurry, ugly, duplicate, poorly drawn, deformed, mosaic"
 
-generator = torch.Generator(device='cuda').manual_seed(3)
+generator = torch.Generator(device='cuda').manual_seed(77)
 
 images = pipe(
     prompt, 
@@ -86,13 +86,14 @@ images = pipe(
     upsample_stage=2,       # Number of upsampling stages
 )
 
-images[-1].save("output.png")
+for i, image in enumerate(images):
+    image.save(f"{prompt}_{i}.png")
 ```
 
 Or run the example script:
 ```bash
 cd SDXL
-python run_scalediff.py
+python run_scalediff_sdxl.py
 ```
 
 ### FLUX.1-dev
@@ -117,9 +118,9 @@ pipe = FluxPipeline.from_pretrained(
 pipe.vae.enable_tiling()
 
 # Generate high-resolution image
-prompt = "a woman standing in a field of flowers"
+prompt = "a woman"
 
-generator = torch.Generator(device="cuda").manual_seed(42)
+generator = torch.Generator(device="cuda").manual_seed(77)
 
 images = pipe(
     prompt + ", highly detailed, 4k resolution, best quality",
@@ -136,7 +137,8 @@ images = pipe(
     t5_to_cpu=True,
 )
 
-images[-1].save("output.png")
+for i, image in enumerate(images):
+    image.save(f"{prompt}_{i}.png")
 ```
 
 Or run the example script:

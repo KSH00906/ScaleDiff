@@ -7,9 +7,9 @@ transformer = FluxTransformer2DModel.from_pretrained(ckpt, torch_dtype=torch.bfl
 pipe = FluxPipeline.from_pretrained(ckpt, torch_dtype=torch.bfloat16, transformer = transformer).to('cuda')
 pipe.vae.enable_tiling()
 
-prompt = "a woman standing in a field of flowers"
+prompt = "a woman"
 
-generator = torch.Generator(device="cuda").manual_seed(42)
+generator = torch.Generator(device="cuda").manual_seed(77)
 
 images = pipe(
     prompt + ", highly detailed, 4k resolution, best quality",

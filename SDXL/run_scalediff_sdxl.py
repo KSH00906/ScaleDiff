@@ -5,10 +5,10 @@ ckpt_path = "stabilityai/stable-diffusion-xl-base-1.0"
 pipe = CustomStableDiffusionXLPipeline.from_pretrained(ckpt_path, torch_dtype=torch.float16).to("cuda")
 pipe.vae.enable_tiling()
 
-prompt = "a potrait of a woman standing in a field of flowers at sunset"
+prompt = "a woman"
 negative_prompt = "blurry, ugly, duplicate, poorly drawn, deformed, mosaic"
 
-generator = torch.Generator(device='cuda').manual_seed(3)
+generator = torch.Generator(device='cuda').manual_seed(77)
 
 images = pipe(prompt, 
             negative_prompt=negative_prompt,
@@ -17,7 +17,7 @@ images = pipe(prompt,
             generator=generator,
             num_inference_steps=50, 
             guidance_scale=7.5,
-            restart_ratio = 0.6,
+            restart_ratio = 0.4,
             scale_factor = 0.125,
             upsample_stage = 2,
             )
