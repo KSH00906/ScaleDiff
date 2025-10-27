@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/arXiv-0000.00000-b31b1b)](https://arxiv.org/abs/????.?????)
+<!--[![](https://img.shields.io/badge/arXiv-0000.00000-b31b1b)](https://arxiv.org/abs/????.?????)-->
 
 # ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
 
@@ -42,7 +42,7 @@ It integrates **NPA**, **LFM**, and **SG** into a single *upsample–diffuse–d
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/<username>/ScaleDiff.git
+git clone https://github.com/KSH00906/ScaleDiff.git
 cd ScaleDiff
 conda create -n scalediff python=3.13
 conda activate scalediff
