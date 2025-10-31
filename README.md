@@ -1,4 +1,4 @@
-<!--[![](https://img.shields.io/badge/arXiv-0000.00000-b31b1b)](https://arxiv.org/abs/????.?????)-->
+[![](https://img.shields.io/badge/arXiv-2510.25818-b31b1b)](https://arxiv.org/abs/2510.25818)
 
 # ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
 
@@ -165,7 +165,10 @@ python run_scalediff_flux_schnell.py # For FLUX.1-schnell (faster)
 
 
 ```bibtex
-
+@article{koh2025scalediff,
+      title={ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion}, 
+      author={Sungho Koh and SeungJu Cha and Hyunwoo Oh and Kwanyoung Lee and Dong-Jin Kim},
+      journal={arXiv preprint arXiv:2510.25818},
+      year={2025},
+}
 ```
-
-<!-- arXiv version will be available soon -->
